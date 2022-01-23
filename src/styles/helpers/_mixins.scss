@@ -1,0 +1,55 @@
+
+/* MIXIN BOX-SIZING */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+     -moz-box-sizing: $box-model;
+      -ms-box-sizing: $box-model;
+          box-sizing: $box-model;
+}
+
+/* MIXIN HDDN */
+@mixin hddn {
+	position: absolute;
+	top:0;
+	left:0;
+	clip:rect(0,0,0,0);
+	overflow: hidden;
+} 
+
+/* CENTER ELEMENT */
+@mixin center ($max-width, $width ) {
+	margin:0 auto;
+	display: block;
+	width: $width;
+	max-width: $max-width;
+}
+
+/* CONTENT BLOCK */
+@mixin content {
+	position: absolute;
+	content: "";
+}
+
+/* CONTENT BLOCKFULL */
+@mixin contentFull {
+	@include content;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+
+/* SIDERCAR BURGER LINES */
+@mixin burgerLines {
+	position: absolute;
+	left:0;
+	background: $WHITE;
+	height: 0.222222rem; 	
+}
+
+@mixin subtitle {
+	font-family: $SERIF;
+	color: $H1;
+	font-weight:700;
+	font-size: 0.77778rem;
+}

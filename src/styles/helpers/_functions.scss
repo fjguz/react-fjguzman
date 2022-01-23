@@ -1,0 +1,5 @@
+
+/* CALCULA WIDTH */
+@function my-width($num){
+  @return $num * 10;
+}

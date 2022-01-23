@@ -1,0 +1,25 @@
+@charset 'utf-8';
+
+@import "helpers/_variables";
+@import "helpers/_mixins";
+@import "helpers/_functions";
+@import "helpers/bootstrap-grid.min";
+@import "base/_reset";
+@import "base/_typography";
+@import "base/_fonts";
+@import "base/animations";
+
+@import "layout/knowledges";
+@import "layout/timeline";
+@import "layout/skills";
+
+
+body {
+    font-family: $SANSERIF;
+    color: #d5d5d5;
+    font-size: 15px;
+    line-height: 1.65em;
+}
+#root {
+    position: relative;
+}
