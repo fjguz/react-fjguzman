@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter, Link, Outlet, Route, Routes, useLocation, useNavigate, } from "react-router-dom";
-import "../../styles/components/_welcome.scss";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import "../../../styles/components/_welcome.scss";
 
 interface WelcomePageProps {
 
@@ -38,7 +38,6 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         </div>
                     </section>
                 </Link>
-
                 <Outlet />
             </main>
         </div>
