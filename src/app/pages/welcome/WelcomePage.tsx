@@ -1,13 +1,37 @@
-import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Location, Outlet, useLocation, useNavigate } from "react-router-dom";
 import "../../../styles/components/_welcome.scss";
+import { ITraining, ITrainingEnum } from "../../api/training/trainingModel";
+import { trainingProvider } from "../../api/training/trainingProvider";
 
 interface WelcomePageProps {
 
 }
 
 const WelcomePage: React.FC<WelcomePageProps> = () => {
-    let location = useLocation();
+    const location: Location = useLocation();
+    const navigate = useNavigate();
+    const [training, setTraining] = useState<ITraining<ITrainingEnum>[]>([]);
+    
+    useEffect(() => {
+        async function getTraining() {
+            const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
+            setTraining(trainingData);
+        }
+        if (location.pathname === "/frontend" || location.pathname === "/backend") {
+           getTraining();
+        }
+      },[location]);
+
+
+    const handleFront = async () => {
+        // Obtenemos datos de api
+        const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
+        setTraining(trainingData);
+        navigate(`/frontend`);
+    };
+
+
     return (
         <div id="welcome" >
             <main className={`wrap wrap-main ${(location.pathname === '/frontend') ? 'front' : ''} ${(location.pathname === '/backend') ? 'back' : ''}`}>
@@ -16,7 +40,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         <h1>Fran<span>Guzmán</span></h1>
                     </div>
                 </header>
-                <Link to="frontend">
+                <div onClick={async () =>{await handleFront();} }>
                     <section id="welFront" className={`main-section frontend ${(location.pathname === '/frontend') ? 'active' : ''}`}>
                         <div className="wrap-section">
                             <header>
@@ -26,7 +50,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                             </header>
                         </div>
                     </section>
-                </Link>
+                </div>
                 <Link to="backend">
                     <section id="welBack" className={`main-section backend ${(location.pathname === '/backend') ? 'active' : ''}`}>
                         <div className="wrap-section">
@@ -38,7 +62,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         </div>
                     </section>
                 </Link>
-                <Outlet />
+                <Outlet context={[training, setTraining]}/> 
             </main>
         </div>
 

@@ -1,10 +1,26 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
+import { ITraining, ITrainingEnum } from "../../api/training/trainingModel";
+import TimeLineList from "../../components/timeline/timelineList/TimeLineList";
 
 interface WelcomeDetailPageProps {
-
+    training?: ITraining<ITrainingEnum>[]
 }
 
+type TrainingContextType = [
+    training: Array<ITraining<ITrainingEnum>>,
+    changeValue: (arg: number | null) => void
+]
+
 const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
+    const [training] = useOutletContext<TrainingContextType>(); 
+    const trainingEducation: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
+        training.type === ITrainingEnum.Education
+    )
+    const trainingExperience: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
+        training.type === ITrainingEnum.Experience
+    )
+    
     return (
         <article id="welcomeDetail">
             <div className="container">
@@ -17,34 +33,11 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
                     <div className="col-sm-6">
                         <section>
                             <h3>Formación</h3>
-                            <div className="timeline timeline-second-style clearfix">
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2016</h5>
-                                        <span className="item-company">Universidad de Ávila</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Adaptación al Grado en Ingeniería de Sistemas de la información</h4>
-                                        <p>Curso universitario de Adaptación al Grado en Ingenieria de Sistemas de la información por la Univesidad de Ávila</p>
-                                    </div>
-                                </div>
-
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2011</h5>
-                                        <span className="item-company">Universidad de Jaén</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Ingeniería Técnica en informatica de Gestión</h4>
-                                        <p>Estudios universitarios cuya disciplina combina una importante carga docente en economía y gestión empresarial con la adquisición de conocimientos cientificos y técnicos, para el diseño e implementacion de sistemas y procesos de gestión de las tecnologías de la información y la comunicación</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <TimeLineList list={trainingEducation}/>
                         </section>
                         <section>
                             <h3>Experiencia</h3>
+                            <TimeLineList list={trainingExperience}/>
                             <div className="timeline timeline-second-style clearfix">
                                 <div className="timeline-item clearfix">
                                     <div className="left-part">

@@ -1,0 +1,51 @@
+{
+    "training": [
+      {
+        "id": 1,
+        "type": "Education",
+        "period": "2016",
+        "company": "University of Ávila",
+        "title": "Degree in Information Systems Engineering",
+        "description": "University course of Adaptation to the Degree in Information Systems Engineering by the University of Ávila"
+      },
+      {
+        "id": 2,
+        "type": "Education",
+        "period": "2011",
+        "company": "University of Jaen",
+        "title": "Technical Engineer in Management Informatics",
+        "description": "University studies whose discipline combines an important teaching load in economics and business management with the acquisition of scientific and technical knowledge, for the design and implementation of information and communication technology management systems and processes."
+      },
+      {
+        "id": 3,
+        "type": "Experience",
+        "period": "2016 - Today",
+        "company": "Ezentis Tecnología",
+        "title": "Senior FullStack Developer | UX Designer",
+        "description": "Working in the Ezentis Technology area in GIS solutions, mainly oriented in the specification and design of interfaces, as well as their implementation. Having extensive experience in some client frameworks (Angular 12, Ionic 3, React, Backbone ...) and client libraries such as RXJS, Redux, Rxjs, Xstate, Cytoscapejs, Swagger, Material ... In addition to server frameworks such as NodeJs, ExpressJs, Feathers, Node-red, ASP .NET, ... Highlight knowledge of Agile methodologies such as SCRUM, use of patterns in design, component modularization for modular architecture solutions and support to the work team." 
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "manzanas",
+        "shopId": 1
+      },
+      {
+        "id": 2,
+        "name": "peras",
+        "shopId": 1
+      },
+      {
+        "id": 3,
+        "name": "escoba",
+        "shopId": 2
+      },
+      {
+        "id": 4,
+        "name": "detergente",
+        "shopId": 2
+      }
+    ]
+  }
+  
