@@ -20,91 +20,19 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
     const trainingExperience: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
         training.type === ITrainingEnum.Experience
     )
-    
+
     return (
         <article id="welcomeDetail">
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
-                        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
-                    </div>
-                </div>
-                <div className="row">
                     <div className="col-sm-6">
                         <section>
-                            <h3>Formación</h3>
+                            <h3>Academic qualifications</h3>
                             <TimeLineList list={trainingEducation}/>
                         </section>
                         <section>
-                            <h3>Experiencia</h3>
+                            <h3>Work experience</h3>
                             <TimeLineList list={trainingExperience}/>
-                            <div className="timeline timeline-second-style clearfix">
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2016 - Actualidad</h5>
-                                        <span className="item-company">Ezentis Tecnología</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Senior FullStack Developer | UX Designer</h4>
-                                        <p>Participando en varios proyectos de trabajo (WFM, ESCAPEX, ALPHA), orientado en la especificación y diseño de interfaces, así como
-                                            en su implementación. Teniendo amplia experiencia en frameworks cliente (Angular 12, Ionic 5), dando soluciones tanto de arquitectura modular,
-                                            como apoyando al equipo de trabajo.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2014 - 2016</h5>
-                                        <span className="item-company">Hispavista - RTVE.es</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Developer | Junior Ui/Ux Designer</h4>
-                                        <p>Trabajando en el departamento de Interactivos de RTVE.es en la implementación y diseño de infografías interactivas basadas principalmente
-                                            en HTML5, CSS3, JQUERY y D3JS. Coordinando y proporcionando ayuda al equipo de trabajo, asi como realizando el analisis y la toma de requisitos
-                                            de los periodistas de RTVE.es.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2013 - 2014</h5>
-                                        <span className="item-company">Evolgroup Internet S.A.</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Junior Developer</h4>
-                                        <p>Programador web en tecnología .NET y profundizando en el aprendizaje de tecnologías MEAN, asi como manteniendo aplicaciones moviles (Windows Phone) </p>
-                                    </div>
-                                </div>
-
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2012</h5>
-                                        <span className="item-company">Asesoría abakonasesores S.L.</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Junior Developer</h4>
-                                        <p>Creación de una herramienta para la gestión online de la Asesoria mediante PHP y MySQL</p>
-                                    </div>
-                                </div>
-
-                                <div className="timeline-item clearfix">
-                                    <div className="left-part">
-                                        <h5 className="item-period">2011</h5>
-                                        <span className="item-company">CFP Eureka C.B.</span>
-                                    </div>
-                                    <div className="divider"></div>
-                                    <div className="right-part">
-                                        <h4 className="item-title">Junior Developer</h4>
-                                        <p>Diseño y implementacion de una plataforma docente basada en Moodle para la impartición de cursos, asi como una frontal web JOOMLA para la visibilidad de la empresa y matriculación de los alumnos </p>
-                                    </div>
-                                </div>
-                            </div>
                         </section>
                     </div>
                     <div className="col-sm-6">

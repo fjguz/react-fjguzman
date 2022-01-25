@@ -25,9 +25,12 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
 
 
     const handleFront = async () => {
-        const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
-        setTraining(trainingData);
-        navigate(`/frontend`);
+        if (location.pathname == "/") {
+            const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
+            setTraining(trainingData);
+            navigate(`/frontend`);
+        } else 
+            navigate(`/`);
     };
 
 
