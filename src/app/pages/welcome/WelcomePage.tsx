@@ -25,7 +25,6 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
 
 
     const handleFront = async () => {
-        // Obtenemos datos de api
         const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
         setTraining(trainingData);
         navigate(`/frontend`);
