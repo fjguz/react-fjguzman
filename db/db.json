@@ -1,61 +1,130 @@
 {
     "training": [
-      {
-        "id": 1,
-        "type": "Education",
-        "period": "2016",
-        "company": "University of Ávila",
-        "title": "Degree in Information Systems Engineering",
-        "description": "University course of Adaptation to the Degree in Information Systems Engineering by the University of Ávila."
-      },
-      {
-        "id": 2,
-        "type": "Education",
-        "period": "2011",
-        "company": "University of Jaen",
-        "title": "Technical Engineer in Management Informatics",
-        "description": "University studies whose discipline combines an important teaching load in economics and business management with the acquisition of scientific and technical knowledge, for the design and implementation of information and communication technology management systems and processes."
-      },
-      {
-        "id": 3,
-        "type": "Experience",
-        "period": "2016 - Today",
-        "company": "Ezentis Tecnología",
-        "title": "Senior FullStack Developer | UX Designer",
-        "description": "Working in the Ezentis Technology area in GIS solutions, mainly oriented in the specification and design of interfaces, as well as their implementation. Having extensive experience in some client frameworks (Angular 12, Ionic 3, React, Backbone ...) and client libraries such as RXJS, Redux, Rxjs, Xstate, Cytoscapejs, Swagger, Material ... In addition to server frameworks such as NodeJs, ExpressJs, Feathers, Node-red, ASP .NET, ... Highlight knowledge of Agile methodologies such as SCRUM, use of patterns in design, component modularization for modular architecture solutions and support to the work team." 
-      },
-      {
-        "id": 4,
-        "type": "Experience",
-        "period": "2014 - 2016",
-        "company": "Hispavista - RTVE.es",
-        "title": "Developer | Junior Ui/UX Designer",
-        "description": "Working in client RTVE.es in the department of Interactives in the creation and design of infographics based on programming languages oriented to Front and BackEnd (HTML5, CSS3, Jquery, D3JS, Node, Express, MongoDB ...) as well as coordinating and providing help to the work team. Highlight the relationship with the client." 
-      },
-      {
-        "id": 5,
-        "type": "Experience",
-        "period": "2013 - 2014",
-        "company": "Evolgroup Internet S.A.",
-        "title": "Junior Developer | Mobile Apps",
-        "description": "Web programmer in .NET technology. Beginning in the study and learning of client languages Backbone, Ember, Angular 1, Alfred, ... Maintenance of Mobile applications (Windows Phone)." 
-      },
-      {
-        "id": 6,
-        "type": "Experience",
-        "period": "2012",
-        "company": "Administrative Agency abakonasesores S.L.",
-        "title": "Junior Developer",
-        "description": "Web application development with XAMP technologies. Highlight the complete construction of the end-to-end solution. Use of languages and libraries such as Javascript, Jquery, Jquery Ui." 
-      },
-      {
-        "id": 7,
-        "type": "Experience",
-        "period": "2011",
-        "company": "Training academy Eureka C.B.",
-        "title": "Junior Developer",
-        "description": "Design and development of a Moodle platform for teaching courses, as well as a Joomla information and enrollment website for students." 
-      }
-    ]
-  }
-  
+        {
+            "id": 1,
+            "type": "Education",
+            "period": "2016",
+            "company": "University of Ávila",
+            "title": "Degree in Information Systems Engineering",
+            "description": "University course of Adaptation to the Degree in Information Systems Engineering by the University of Ávila."
+        },
+        {
+            "id": 2,
+            "type": "Education",
+            "period": "2011",
+            "company": "University of Jaen",
+            "title": "Technical Engineer in Management Informatics",
+            "description": "University studies whose discipline combines an important teaching load in economics and business management with the acquisition of scientific and technical knowledge, for the design and implementation of information and communication technology management systems and processes."
+        },
+        {
+            "id": 3,
+            "type": "Experience",
+            "period": "2016 - Today",
+            "company": "Ezentis Tecnología",
+            "title": "Senior FullStack Developer | UX Designer",
+            "description": "Working in the Ezentis Technology area in GIS solutions, mainly oriented in the specification and design of interfaces, as well as their implementation. Having extensive experience in some client frameworks (Angular 12, Ionic 3, React, Backbone ...) and client libraries such as RXJS, Redux, Rxjs, Xstate, Cytoscapejs, Swagger, Material ... In addition to server frameworks such as NodeJs, ExpressJs, Feathers, Node-red, ASP .NET, ... Highlight knowledge of Agile methodologies such as SCRUM, use of patterns in design, component modularization for modular architecture solutions and support to the work team."
+        },
+        {
+            "id": 4,
+            "type": "Experience",
+            "period": "2014 - 2016",
+            "company": "Hispavista - RTVE.es",
+            "title": "Developer | Junior Ui/UX Designer",
+            "description": "Working in client RTVE.es in the department of Interactives in the creation and design of infographics based on programming languages oriented to Front and BackEnd (HTML5, CSS3, Jquery, D3JS, Node, Express, MongoDB ...) as well as coordinating and providing help to the work team. Highlight the relationship with the client."
+        },
+        {
+            "id": 5,
+            "type": "Experience",
+            "period": "2013 - 2014",
+            "company": "Evolgroup Internet S.A.",
+            "title": "Junior Developer | Mobile Apps",
+            "description": "Web programmer in .NET technology. Beginning in the study and learning of client languages Backbone, Ember, Angular 1, Alfred, ... Maintenance of Mobile applications (Windows Phone)."
+        },
+        {
+            "id": 6,
+            "type": "Experience",
+            "period": "2012",
+            "company": "Administrative Agency abakonasesores S.L.",
+            "title": "Junior Developer",
+            "description": "Web application development with XAMP technologies. Highlight the complete construction of the end-to-end solution. Use of languages and libraries such as Javascript, Jquery, Jquery Ui."
+        },
+        {
+            "id": 7,
+            "type": "Experience",
+            "period": "2011",
+            "company": "Training academy Eureka C.B.",
+            "title": "Junior Developer",
+            "description": "Design and development of a Moodle platform for teaching courses, as well as a Joomla information and enrollment website for students."
+        }
+    ],
+    "frontend": {
+        "skills": [
+            {
+                "id": 1,
+                "type": "Framework",
+                "label": "Angular",
+                "percent": 95
+            },
+            {
+                "id": 2,
+                "type": "Framework",
+                "label": "React",
+                "percent": 70
+            },
+            {
+                "id": 3,
+                "type": "Framework",
+                "label": "Ionic",
+                "percent": 80
+            },
+            {
+                "id": 4,
+                "type": "Framework",
+                "label": "Backbone",
+                "percent": 25
+            },
+            {
+              "id": 5,
+              "type": "Code",
+              "label": "HTML/CSS3",
+              "percent": 100
+            },
+            {
+              "id": 6,
+              "type": "Code",
+              "label": "Javascript ES6",
+              "percent": 95
+            },
+            {
+              "id": 7,
+              "type": "Code",
+              "label": "Typescript",
+              "percent": 95
+            },
+            {
+              "id": 8,
+              "type": "Code",
+              "label": "SCSS",
+              "percent": 65
+            },
+            {
+              "id": 9,
+              "type": "Test",
+              "label": "Jest, Enzyme",
+              "percent": 75
+            },
+            {
+              "id": 10,
+              "type": "Test",
+              "label": "Protactor",
+              "percent": 50
+            },
+            {
+              "id": 11,
+              "type": "Test",
+              "label": "Jasmine, Karma",
+              "percent": 35
+            }
+        ]
+    }
+}
