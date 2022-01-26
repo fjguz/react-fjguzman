@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="welcome"
+>
+  <main
+    className="wrap wrap-main  "
+  >
+    <header
+      className="header-main"
+    >
+      <div>
+        <h1>
+          Fran
+          <span>
+            Guzmán
+          </span>
+        </h1>
+      </div>
+    </header>
+    <div
+      onClick={[Function]}
+    >
+      <section
+        className="main-section frontend "
+        id="welFront"
+      >
+        <div
+          className="wrap-section"
+        >
+          <header>
+            <h2>
+              front-end
+              <span>
+                developer
+              </span>
+            </h2>
+          </header>
+        </div>
+      </section>
+    </div>
+    <a
+      href="/backend"
+      onClick={[Function]}
+    >
+      <section
+        className="main-section backend "
+        id="welBack"
+      >
+        <div
+          className="wrap-section"
+        >
+          <header>
+            <h2>
+              back-end
+              <span>
+                developer
+              </span>
+            </h2>
+          </header>
+        </div>
+      </section>
+    </a>
+  </main>
+</div>
+`;
