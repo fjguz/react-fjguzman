@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, Location, Outlet, useLocation, useNavigate } from "react-router-dom";
 import "../../../styles/components/_welcome.scss";
-import { ITraining, ITrainingEnum } from "../../api/training/trainingModel";
-import { trainingProvider } from "../../api/training/trainingProvider";
-
+import { apiService } from "../../api/apiService";
+import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
 interface WelcomePageProps {
 
 }
@@ -15,7 +14,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
     
     useEffect(() => {
         async function getTraining() {
-            const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
+            const trainingData: ITraining<ITrainingEnum>[] = await apiService.get("training");
             setTraining(trainingData);
         }
         if (location.pathname === "/frontend" || location.pathname === "/backend") {
@@ -23,16 +22,14 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
         }
       },[location]);
 
-
     const handleFront = async () => {
         if (location.pathname == "/") {
-            const trainingData: ITraining<ITrainingEnum>[] = await trainingProvider.get("training");
+            const trainingData: ITraining<ITrainingEnum>[] = await apiService.get("training");
             setTraining(trainingData);
             navigate(`/frontend`);
         } else 
             navigate(`/`);
     };
-
 
     return (
         <div id="welcome" >

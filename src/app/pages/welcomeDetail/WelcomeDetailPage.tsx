@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import { ITraining, ITrainingEnum } from "../../api/training/trainingModel";
+import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
 import TimeLineList from "../../components/timeline/timelineList/TimeLineList";
 
 interface WelcomeDetailPageProps {

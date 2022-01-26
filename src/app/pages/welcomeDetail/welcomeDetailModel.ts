@@ -1,4 +1,4 @@
-import { ITraining, ITrainingEnum } from "../../api/training/trainingModel";
+import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
 
 export interface IWelcomeDetail {
   education: ITraining<ITrainingEnum.Education>[];
