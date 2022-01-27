@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { apiService } from "../../api/apiService";
 import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
+import SkillList from "../../components/skill/skillList/skillList";
 import TimeLineList from "../../components/timeline/timelineList/TimeLineList";
+import { PathContext } from "../../context/pathContext";
 
 interface WelcomeDetailPageProps {
     training?: ITraining<ITrainingEnum>[]
@@ -13,13 +16,28 @@ type TrainingContextType = [
 ]
 
 const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
+    const {path}= React.useContext(PathContext) as ContextType;
     const [training] = useOutletContext<TrainingContextType>(); 
+    const [welcomeDetail, setWelcomeDetail] = useState<any>({});
     const trainingEducation: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
         training.type === ITrainingEnum.Education
     )
     const trainingExperience: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
         training.type === ITrainingEnum.Experience
     )
+
+    useEffect(() => {
+        async function getPage(page: string) {
+            const endpoint: string = page.slice(1,page.length);
+            const data: ITraining<ITrainingEnum>[] = await apiService.get(endpoint);
+            setWelcomeDetail(data);
+        }
+        if (path.path === "/frontend" || path.path === "/backend") {
+            getPage(path.path);
+        }
+
+      }, [path]);
+
 
     return (
         <article id="welcomeDetail">
@@ -37,128 +55,23 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
                     </div>
                     <div className="col-sm-6">
                         <section>
-                            <h3>Framework <span>Skills</span></h3>
-                            <div className="skills-info skills-second-style">
-                                {/* <!-- Skill 1 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Angular</h4>
-                                    <div className="skill-value">95%</div>
-                                </div>
-                                <div className="skill-container skill-95">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 1 --> */}
-
-                                {/* <!-- Skill 2 --> */}
-                                <div className="skill clearfix">
-                                    <h4>React</h4>
-                                    <div className="skill-value">65%</div>
-                                </div>
-                                <div className="skill-container skill-65">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 2 --> */}
-
-                                {/* <!-- Skill 3 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Ionic</h4>
-                                    <div className="skill-value">75%</div>
-                                </div>
-                                <div className="skill-container skill-75">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 3 --> */}
-
-                                {/* <!-- Skill 4 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Vue</h4>
-                                    <div className="skill-value">25%</div>
-                                </div>
-                                <div className="skill-container skill-25">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 3 --> */}
-                            </div>
+                           <h3>Framework <span>Skills</span></h3>
+                            {
+                                <SkillList list={(welcomeDetail.skills)? welcomeDetail.skills.filter((skill: any) => skill.type === "Framework"): []} />
+                            }        
                         </section>
 
                         <section>
                             <h3>Code <span>Skills</span></h3>
-                            <div className="skills-info skills-second-style">
-                                {/* <!-- Skill 1 --> */}
-                                <div className="skill clearfix">
-                                    <h4>HTML5/CSS3</h4>
-                                    <div className="skill-value">95%</div>
-                                </div>
-                                <div className="skill-container skill-95">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 1 --> */}
-
-                                {/* <!-- Skill 2 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Javascript</h4>
-                                    <div className="skill-value">100%</div>
-                                </div>
-                                <div className="skill-container skill-100">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 2 --> */}
-
-                                {/* <!-- Skill 3 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Typescript</h4>
-                                    <div className="skill-value">90%</div>
-                                </div>
-                                <div className="skill-container skill-90">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 3 --> */}
-
-                                {/* <!-- Skill 4 --> */}
-                                <div className="skill clearfix">
-                                    <h4>SCSS</h4>
-                                    <div className="skill-value">60%</div>
-                                </div>
-                                <div className="skill-container skill-60">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 4 --> */}
-
-                            </div>
+                            {
+                                <SkillList list={(welcomeDetail.skills)? welcomeDetail.skills.filter((skill: any) => skill.type === "Code"): []} />
+                            }
                         </section>
                         <section>
                             <h3>Test <span>Skills</span></h3>
-                            <div className="skills-info skills-second-style">
-                                {/* <!-- Skill 1 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Jest, Enzyme</h4>
-                                    <div className="skill-value">75%</div>
-                                </div>
-                                <div className="skill-container skill-75">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 1 --> */}
-
-                                {/* <!-- Skill 2 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Protactor</h4>
-                                    <div className="skill-value">40%</div>
-                                </div>
-                                <div className="skill-container skill-40">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 2 --> */}
-
-                                {/* <!-- Skill 3 --> */}
-                                <div className="skill clearfix">
-                                    <h4>Jasmine, Karma </h4>
-                                    <div className="skill-value">35%</div>
-                                </div>
-                                <div className="skill-container skill-35">
-                                    <div className="skill-percentage"></div>
-                                </div>
-                                {/* <!-- End of Skill 3 --> */}
-                            </div>
+                            {
+                                <SkillList list={(welcomeDetail.skills)? welcomeDetail.skills.filter((skill: any) => skill.type === "Test"): []} />
+                            }    
                         </section>
                         <section>
                             <h3>Librerias</h3>

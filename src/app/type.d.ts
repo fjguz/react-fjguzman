@@ -1,5 +1,11 @@
+const enum PathEnum {
+  MAIN = "/",
+  FRONT = "/frontend",
+  BACK = "/backend",
+}
+
 interface IPath {
-  path: string;
+  path: PathEnum | string;
 }
 
 type ContextType = {
