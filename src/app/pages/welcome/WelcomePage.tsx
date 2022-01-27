@@ -23,10 +23,20 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
         }
       },[path]);
   
-    const handleFront = async () => {
+    const handleFront = () => {
         if (path.path === "/") {   
             navigate(`/frontend`);
             updatePath({path: '/frontend' });
+        } else {
+            navigate(`/`);
+            updatePath({path: '/' });
+        }
+    };
+    
+    const handleBack = () => {
+        if (path.path === "/") {   
+            navigate(`/backend`);
+            updatePath({path: '/backend' });
         } else {
             navigate(`/`);
             updatePath({path: '/' });
@@ -41,7 +51,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         <h1>Fran<span>Guzmán</span></h1>
                     </div>
                 </header>
-                <div onClick={async () =>{await handleFront();} }>
+                <div onClick={ () =>{ handleFront();} }>
                     <section id="welFront" className={`main-section frontend ${(path.path === '/frontend') ? 'active' : ''}`}>
                         <div className="wrap-section">
                             <header>
@@ -52,7 +62,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         </div>
                     </section>
                 </div>
-                <Link to="backend">
+                <div onClick={ () =>{ handleBack();} }>
                     <section id="welBack" className={`main-section backend ${(path.path === '/backend') ? 'active' : ''}`}>
                         <div className="wrap-section">
                             <header>
@@ -62,7 +72,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                             </header>
                         </div>
                     </section>
-                </Link>
+                </div>
                 <Outlet context={[training, setTraining]}/> 
             </main>
         </div>
