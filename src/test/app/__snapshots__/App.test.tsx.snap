@@ -19,49 +19,44 @@ exports[`renders correctly 1`] = `
         </h1>
       </div>
     </header>
-    <div
+    <section
+      className="main-section "
+      id="welFront"
       onClick={[Function]}
     >
-      <section
-        className="main-section frontend "
-        id="welFront"
+      <div
+        className="wrap-section"
       >
-        <div
-          className="wrap-section"
-        >
-          <header>
-            <h2>
-              front-end
-              <span>
-                developer
-              </span>
-            </h2>
-          </header>
-        </div>
-      </section>
-    </div>
-    <a
-      href="/backend"
+        <header>
+          <h2>
+            front-end
+            <span>
+              developer
+            </span>
+          </h2>
+        </header>
+        
+      </div>
+    </section>
+    <section
+      className="main-section "
+      id="welBack"
       onClick={[Function]}
     >
-      <section
-        className="main-section backend "
-        id="welBack"
+      <div
+        className="wrap-section"
       >
-        <div
-          className="wrap-section"
-        >
-          <header>
-            <h2>
-              back-end
-              <span>
-                developer
-              </span>
-            </h2>
-          </header>
-        </div>
-      </section>
-    </a>
+        <header>
+          <h2>
+            back-end
+            <span>
+              developer
+            </span>
+          </h2>
+        </header>
+        
+      </div>
+    </section>
   </main>
 </div>
 `;
