@@ -45,7 +45,7 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
 
     return (
         <div id="welcome" >
-            <main className={`wrap wrap-main ${(path.path === '/frontend') ? 'front' : ''} ${(path.path === '/backend') ? 'back' : ''}`}>
+            <main className={`wrap wrap-main ${(path.path === '/frontend') ? 'front frontend' : ''} ${(path.path === '/backend') ? 'back backend' : ''}`}>
                 <header className="header-main">
                     <div>
                         <h1>Fran<span>Guzmán</span></h1>
@@ -73,7 +73,9 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
                         </div>
                     </section>
                 </div>
-                <Outlet context={[training, setTraining]}/> 
+                <div>
+                    <Outlet context={[training, setTraining]}/> 
+                </div>
             </main>
         </div>
 
