@@ -45,37 +45,34 @@ const WelcomePage: React.FC<WelcomePageProps> = () => {
 
     return (
         <div id="welcome" >
-            <main className={`wrap wrap-main ${(path.path === '/frontend') ? 'front frontend' : ''} ${(path.path === '/backend') ? 'back backend' : ''}`}>
+            <main className={`wrap wrap-main ${(path.path === '/frontend') ? 'front' : ''} ${(path.path === '/backend') ? 'back' : ''}`}>
                 <header className="header-main">
                     <div>
                         <h1>Fran<span>Guzmán</span></h1>
                     </div>
                 </header>
-                <div onClick={ () =>{ handleFront();} }>
-                    <section id="welFront" className={`main-section frontend ${(path.path === '/frontend') ? 'active' : ''}`}>
-                        <div className="wrap-section">
-                            <header>
-                                <h2>front-end
-                                    <span>developer</span>
-                                </h2>
-                            </header>
-                        </div>
-                    </section>
-                </div>
-                <div onClick={ () =>{ handleBack();} }>
-                    <section id="welBack" className={`main-section backend ${(path.path === '/backend') ? 'active' : ''}`}>
-                        <div className="wrap-section">
-                            <header>
-                                <h2>back-end
-                                    <span>developer</span>
-                                </h2>
-                            </header>
-                        </div>
-                    </section>
-                </div>
-                <div>
-                    <Outlet context={[training, setTraining]}/> 
-                </div>
+
+                <section id="welFront" onClick={ () =>{ handleFront();} } className={`main-section ${(path.path === '/frontend') ? 'active' : ''}`}>
+                    <div className="wrap-section">
+                        <header>
+                            <h2>front-end
+                                <span>developer</span>
+                            </h2>
+                        </header>
+                        {(path.path === '/frontend') ? <Outlet context={[training, setTraining]}/> : ''}
+                    </div>
+                </section>
+
+                <section id="welBack"  onClick={ () =>{ handleBack();} } className={`main-section ${(path.path === '/backend') ? 'active' : ''}`}>
+                    <div className="wrap-section">
+                        <header>
+                            <h2>back-end
+                                <span>developer</span>
+                            </h2>
+                        </header>
+                        {(path.path === '/backend') ? <Outlet context={[training, setTraining]}/> : ''}
+                    </div>
+                </section>
             </main>
         </div>
 

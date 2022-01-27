@@ -20,14 +20,14 @@ body,
     overflow: hidden;
   }
 
-  .frontend,
-  .backend {
+  #welFront,
+  #welBack {
     display: block;
     background-size: cover;
     background-attachment: unset;
   }
 
-  .frontend {
+  #welFront {
     background: url("../../assets/img/background_welcome.jpg") no-repeat center
       top #28292a;
     left: 0;
@@ -38,7 +38,7 @@ body,
     }
   }
 
-  .backend {
+  #welBack {
     background: url("../../assets/img/background_backend.jpg") no-repeat center
       top #28292a;
     right: 0;
@@ -48,27 +48,27 @@ body,
     }
   }
 
-  .front .frontend,
-  .back .backend {
+  .front #welFront,
+  .back #welBack {
     width: 100%;
     transition: all ease 0.6s;
     position: absolute;
     z-index: 1;
   }
 
-  .frontToInit .frontend {
+  .frontToInit #welFront {
     z-index: 1;
   }
 
-  .front .frontend:before,
-  .front .frontend:hover:before,
-  .back .backend:before,
-  .back .backend:hover:before {
+  .front #welFront:before,
+  .front #welFront:hover:before,
+  .back #welBack:before,
+  .back #welBack:hover:before {
     background-color: #000000ea;
     transition: all ease 0.6s;
   }
-  .frontend:before,
-  .backend:before {
+  #welFront:before,
+  #welBack:before {
     content: "";
     position: absolute;
     top: 0;
@@ -77,8 +77,8 @@ body,
     height: 100%;
     background-color: #000000c7;
   }
-  .frontend:hover:before,
-  .backend:hover:before {
+  #welFront:hover:before,
+  #welBack:hover:before {
     background-color: #000000b4;
     transition: all ease 0.3s;
   }
@@ -89,13 +89,13 @@ body,
     z-index: 1;
     margin: 0 auto;
   }
-  .front .frontend.active .container,
-  .back .backend.active .container {
+  .front #welFront.active .container,
+  .back #welBack.active .container {
     position: relative;
   }
 
-  .front .frontend.active header,
-  .back .backend.active header {
+  .front #welFront.active header,
+  .back #welBack.active header {
     top: 100px;
   }
 
@@ -220,6 +220,9 @@ body,
   // background: url("../../assets/img/pattern.png") #000000c7 left top repeat;
 }
 
+#welFront {
+}
+
 #welcomeDetail {
   .container {
     margin-top: 50px;
@@ -246,13 +249,13 @@ body,
   }
 }
 
-.main-section.frontend {
+.main-section#welFront {
   h3 span {
     color: $FRONT;
   }
 }
 
-.main-section.backend {
+.main-section#welBack {
   h3 span {
     color: $BACK;
   }
@@ -271,11 +274,11 @@ body,
     .main-section + .main-section {
       top: 50%;
     }
-    .back .backend.active {
+    .back #welBack.active {
       top: 0;
       height: 100%;
     }
-    .front .frontend.active {
+    .front #welFront.active {
       height: 100%;
     }
   }

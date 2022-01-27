@@ -40,7 +40,7 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
 
 
     return (
-        <article id="welcomeDetail">
+        <article id="welcomeDetail"  className={`${(path.path === '/frontend') ? 'frontend' : ''} ${(path.path === '/backend') ? 'backend' : ''}`}>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-6">
