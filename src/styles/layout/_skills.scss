@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-#welBack .skills-second-style .skill-container {
+.backend .skills-second-style .skill-container {
   border: 1px solid $BACK;
 }
 .skills-second-style .skill-container:before {
@@ -36,7 +36,7 @@
   position: absolute;
   background-color: $FRONT;
 }
-#welBack .skills-second-style .skill-container:before {
+.backend .skills-second-style .skill-container:before {
   background-color: $BACK;
 }
 
@@ -59,7 +59,7 @@
   padding: 0;
 }
 
-#welBack .skills-second-style .skill-percentage {
+.backend .skills-second-style .skill-percentage {
   background-color: $BACK;
 }
 

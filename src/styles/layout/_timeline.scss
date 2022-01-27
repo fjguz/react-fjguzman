@@ -57,7 +57,7 @@
   z-index: 0;
 }
 
-#welBack .timeline-second-style .divider:before {
+.backend .timeline-second-style .divider:before {
   background-color: $BACK;
 }
 
@@ -75,7 +75,7 @@
   z-index: 1;
 }
 
-#welBack .timeline-second-style .divider:after {
+.backend .timeline-second-style .divider:after {
   border: 2px solid $BACK;
 }
 

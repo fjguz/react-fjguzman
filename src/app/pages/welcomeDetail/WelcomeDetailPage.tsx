@@ -68,7 +68,7 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
                             }
                         </section>
                         <section>
-                            <h3>Test <span>Skills</span></h3>
+                        {(welcomeDetail?.skills &&  welcomeDetail.skills.filter((skill: any) => skill.type === "Test").length > 0) ? <h3>Test <span>Skills</span></h3> : ''}
                             {
                                 <SkillList list={(welcomeDetail.skills)? welcomeDetail.skills.filter((skill: any) => skill.type === "Test"): []} />
                             }    
