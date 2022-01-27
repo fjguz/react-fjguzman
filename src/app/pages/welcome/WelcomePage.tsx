@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "../../../styles/components/_welcome.scss";
 import { apiService } from "../../api/apiService";
 import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
