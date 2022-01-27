@@ -168,32 +168,38 @@
             {
               "id": 7,
               "type": "Code",
-              "label": "Typescript",
+              "label": "Javascript",
               "percent": 95
-            },
+            },            
             {
               "id": 8,
               "type": "Code",
-              "label": "SCSS",
-              "percent": 65
+              "label": "Typescript",
+              "percent": 90
             },
             {
               "id": 9,
-              "type": "Test",
-              "label": "Jest, Enzyme",
-              "percent": 75
-            },
-            {
-              "id": 10,
-              "type": "Test",
-              "label": "Protactor",
+              "type": "Code",
+              "label": "C#",
               "percent": 50
             },
             {
+              "id": 10,
+              "type": "Code",
+              "label": "Java",
+              "percent": 50
+            },     
+            {
               "id": 11,
-              "type": "Test",
-              "label": "Jasmine, Karma",
-              "percent": 35
+              "type": "Code",
+              "label": "PHP",
+              "percent": 50
+            },  
+            {
+              "id": 11,
+              "type": "Code",
+              "label": "C++",
+              "percent": 50
             }
         ]
     }
