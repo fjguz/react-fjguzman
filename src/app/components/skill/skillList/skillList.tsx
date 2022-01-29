@@ -1,8 +1,6 @@
 import React from "react";
-import SkillItem from "../skillItem/skillItem";
+import SkillItem from "../SkillItem/SkillItem";
 import { ISkillItem } from "../skillModel";
-
-
 interface SkillListProps {
     list: ISkillItem[];
 }

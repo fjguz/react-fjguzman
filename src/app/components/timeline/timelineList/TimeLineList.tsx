@@ -1,8 +1,8 @@
 import React from "react";
-import TimeLineItem from "../timelineItem/TimeLineItem";
-import { ITimeLine } from "./timeLineModel";
+import TimeLineItem from "../TimelineItem/TimeLineItem";
+import { ITimeLine } from "../timeLineModel";
 
-interface TimeLineListProps {
+interface TimeLineListProps { 
     list: ITimeLine[];
 }
 

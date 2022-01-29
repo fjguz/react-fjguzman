@@ -1,5 +1,5 @@
 import React from "react";
-import { ITimeLine } from "../timelineList/timeLineModel";
+import { ITimeLine } from "../timeLineModel";
 
 interface TimeLineItemProps {
     item: ITimeLine

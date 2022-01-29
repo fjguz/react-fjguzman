@@ -1,6 +1,5 @@
 import React from "react";
 import { ISkillItem } from "../skillModel";
-
 interface SkillItemProps {
     item: ISkillItem
 }

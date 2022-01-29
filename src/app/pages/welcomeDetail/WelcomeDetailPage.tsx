@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { apiService } from "../../api/apiService";
 import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
-import SkillList from "../../components/skill/skillList/skillList";
-import TimeLineList from "../../components/timeline/timelineList/TimeLineList";
+import SkillList from "../../components/Skill/SkillList/SkillList";
+import TimeLineList from "../../components/Timeline/TimelineList/TimeLineList";
 import { PathContext } from "../../context/pathContext";
 
 interface WelcomeDetailPageProps {
