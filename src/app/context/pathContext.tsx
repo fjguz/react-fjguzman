@@ -3,11 +3,7 @@ import * as React from "react";
 export const PathContext = React.createContext<ContextType | null>(null);
 
 const PathProvider: React.FC<React.ReactNode> = ({ children }) => {
-  const [path, setPath] = React.useState<IPath>(
-    {
-      path: "/"
-    }
-  );
+  const [path, setPath] = React.useState<IPath>({path: "/"});
 
   const savePath = (save: IPath) => {
     const newPath: IPath = {
@@ -17,8 +13,7 @@ const PathProvider: React.FC<React.ReactNode> = ({ children }) => {
   };
 
   const updatePath = (route: IPath) => {
-    path.path = route.path;
-    setPath({...path})
+    setPath({...route})
   };
 
   return (
