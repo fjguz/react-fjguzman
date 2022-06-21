@@ -4,6 +4,7 @@ import { apiService } from "../../api/apiService";
 import { ITraining, ITrainingEnum } from "../../api/models/trainingModel";
 import SkillList from "../../components/Skill/SkillList/SkillList";
 import TimeLineList from "../../components/Timeline/TimelineList/TimeLineList";
+import { ITimeLine } from "../../components/Timeline/timeLineModel";
 import { PathContext } from "../../context/pathContext";
 
 interface WelcomeDetailPageProps {
@@ -19,12 +20,12 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
     const {path}= React.useContext(PathContext) as ContextType;
     const [training] = useOutletContext<TrainingContextType>(); 
     const [welcomeDetail, setWelcomeDetail] = useState<any>({});
-    const trainingEducation: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
+    const trainingEducation: Array<ITimeLine> = training.filter((training: ITraining<ITrainingEnum>) =>
         training.type === ITrainingEnum.Education
-    )
-    const trainingExperience: Array<ITraining<ITrainingEnum>> = training.filter((training: ITraining<ITrainingEnum>) =>
+    ) as Array<ITimeLine>
+    const trainingExperience: Array<ITimeLine> = training.filter((training: ITraining<ITrainingEnum>) =>
         training.type === ITrainingEnum.Experience
-    )
+    ) as Array<ITimeLine>
 
     useEffect(() => {
         async function getPage(page: string) {
@@ -37,7 +38,7 @@ const WelcomeDetailPage: React.FC<WelcomeDetailPageProps> = () => {
         }
 
       }, [path]);
-
+ 
 
     return (
         <article id="welcomeDetail"  className={`${(path.path === '/frontend') ? 'frontend' : ''} ${(path.path === '/backend') ? 'backend' : ''}`}>

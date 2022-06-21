@@ -8,13 +8,15 @@ interface TimeLineListProps {
 
 const TimeLineList: React.FC<TimeLineListProps> = ({list}) => {
     return (  
-            <div className="timeline timeline-second-style clearfix">
+            <ul className="timeline timeline-second-style clearfix">
                 {            
                     list.map((item, i) =>
-                        <TimeLineItem key={i} item={item}/>
+                        (<li key={i} >
+                            <TimeLineItem item={item}/>
+                        </li>)
                     )
                 }
-            </div>
+            </ul>
         );
 }
 

@@ -7,14 +7,16 @@ interface SkillListProps {
 
 const SkillList: React.FC<SkillListProps> = ({list}) => {
     return (  
-            <div className="skills-info skills-second-style">
+            <ul className="skills-info skills-second-style">
                 {            
                     list.map((item, i) =>
-                        <SkillItem key={i} item={item}/>
+                        (<li key={i}>
+                            <SkillItem  item={item}/>
+                        </li>)
                     )
                 }
-            </div>
+            </ul>
         );
-}
+} 
 
-export default SkillList;
+export default SkillList;  
